@@ -1,6 +1,6 @@
 {
   "name": "@paybeehive/beehivehub-nodejs-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official SDK for Beehive Hub API integration.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
