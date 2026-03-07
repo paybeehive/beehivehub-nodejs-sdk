@@ -45,7 +45,7 @@ export class BeehiveHubAPIError extends BeehiveHubError {
  * Error thrown when authentication fails (401 Unauthorized)
  */
 export class BeehiveHubAuthenticationError extends BeehiveHubError {
-  constructor(message: string = "Invalid API key or authentication failed") {
+  constructor(message = "Invalid API key or authentication failed") {
     super(message, 401, "authentication_error");
     this.name = "BeehiveHubAuthenticationError";
   }
@@ -75,7 +75,7 @@ export class BeehiveHubNotFoundError extends BeehiveHubError {
  * Error thrown when rate limit is exceeded (429 Too Many Requests)
  */
 export class BeehiveHubRateLimitError extends BeehiveHubError {
-  constructor(message: string = "Rate limit exceeded") {
+  constructor(message = "Rate limit exceeded") {
     super(message, 429, "rate_limit_error");
     this.name = "BeehiveHubRateLimitError";
   }

@@ -40,28 +40,23 @@ export function createRequest(
 
       const text = await response.text();
       // DELETE/204 pode retornar corpo vazio; response.json() em "" → "Unexpected end of JSON input"
-      const data = text ? JSON.parse(text) : {};
+      const data = text ? (JSON.parse(text) as Record<string, unknown>) : {};
 
       if (!response.ok) {
-        const errorMessage = (data as any).message || (data as any).error || "Unknown error";
-        
-        // Throw specific error types based on status code
+        const err = data as { message?: string; error?: string; resource?: string; code?: string };
+        const errorMessage = err.message ?? err.error ?? "Unknown error";
+
         switch (response.status) {
           case 400:
             throw new BeehiveHubValidationError(errorMessage, data);
           case 401:
             throw new BeehiveHubAuthenticationError(errorMessage);
           case 404:
-            throw new BeehiveHubNotFoundError((data as any).resource || "Resource");
+            throw new BeehiveHubNotFoundError(err.resource ?? "Resource");
           case 429:
             throw new BeehiveHubRateLimitError(errorMessage);
           default:
-            throw new BeehiveHubAPIError(
-              errorMessage, 
-              response.status, 
-              (data as any).code,
-              data
-            );
+            throw new BeehiveHubAPIError(errorMessage, response.status, err.code, data);
         }
       }
 
