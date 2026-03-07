@@ -80,10 +80,10 @@ export function createCustomersResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const customer = await beehive.customers.get("123456");
+     * const customer = await beehive.customers.get(123456);
      * ```
      */
-    get(id: string): Promise<GetCustomerResponse> {
+    get(id: number): Promise<GetCustomerResponse> {
       return request(`/customers/${id}`, {
         method: "GET",
       });

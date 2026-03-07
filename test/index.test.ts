@@ -76,7 +76,7 @@ describe("BeehiveHub SDK", () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue({ id: "123", status: "paid" });
 
-      const result = await sdk.transactions.get("123");
+      const result = await sdk.transactions.get(123);
 
       expect(mockRequest).toHaveBeenCalledWith("/transactions/123", {
         method: "GET",
@@ -190,7 +190,7 @@ describe("BeehiveHub SDK", () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue({ id: 916, legalName: "Recebedor Teste" });
 
-      const result = await sdk.recipients.get("916");
+      const result = await sdk.recipients.get(916);
 
       expect(mockRequest).toHaveBeenCalledWith("/recipients/916", {
         method: "GET",
@@ -203,7 +203,7 @@ describe("BeehiveHub SDK", () => {
       const updateData = { legalName: "Nome Atualizado" };
       mockRequest.mockResolvedValue({ id: 916, legalName: "Nome Atualizado" });
 
-      const result = await sdk.recipients.update("916", updateData);
+      const result = await sdk.recipients.update(916, updateData);
 
       expect(mockRequest).toHaveBeenCalledWith("/recipients/916", {
         method: "PUT",
@@ -228,7 +228,7 @@ describe("BeehiveHub SDK", () => {
       };
 
       mockRequest.mockResolvedValue({ id: 1048, ...bankAccountData });
-      const result = await sdk.bankAccounts.create("916", bankAccountData);
+      const result = await sdk.bankAccounts.create(916, bankAccountData);
 
       expect(mockRequest).toHaveBeenCalledWith("/recipients/916/bank-accounts", {
         method: "POST",
@@ -241,7 +241,7 @@ describe("BeehiveHub SDK", () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue([{ id: 1048 }, { id: 1049 }]);
 
-      const result = await sdk.bankAccounts.list("916");
+      const result = await sdk.bankAccounts.list(916);
 
       expect(mockRequest).toHaveBeenCalledWith("/recipients/916/bank-accounts", {
         method: "GET",
@@ -299,7 +299,7 @@ describe("BeehiveHub SDK", () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue({ id: 1838, amount: 50000, status: "pending" });
 
-      const result = await sdk.transfers.get("1838");
+      const result = await sdk.transfers.get(1838);
 
       expect(mockRequest).toHaveBeenCalledWith("/transfers/1838", {
         method: "GET",
@@ -371,23 +371,23 @@ describe("BeehiveHub SDK", () => {
 
     it("should call list payment links endpoint", async () => {
       const sdk = BeehiveHub(apiKey);
-      mockRequest.mockResolvedValue([{ id: "pl-123" }, { id: "pl-456" }]);
+      mockRequest.mockResolvedValue([{ id: 123 }, { id: 456 }]);
 
       const result = await sdk.paymentLinks.list();
 
       expect(mockRequest).toHaveBeenCalledWith("/payment-links", {
         method: "GET",
       });
-      expect(result).toEqual([{ id: "pl-123" }, { id: "pl-456" }]);
+      expect(result).toEqual([{ id: 123 }, { id: 456 }]);
     });
 
     it("should call get payment link endpoint", async () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue({ id: 123, alias: "7oVnM7sUTE", title: "link atualizado", amount: 20000 });
 
-      const result = await sdk.paymentLinks.get("pl-123");
+      const result = await sdk.paymentLinks.get(247);
 
-      expect(mockRequest).toHaveBeenCalledWith("/payment-links/pl-123", {
+      expect(mockRequest).toHaveBeenCalledWith("/payment-links/247", {
         method: "GET",
       });
       expect(result).toEqual({
@@ -402,9 +402,9 @@ describe("BeehiveHub SDK", () => {
     it("should preserve alias when provided on update", async () => {
       const sdk = BeehiveHub(apiKey);
       const updateData = { amount: 20000, alias: "meu-alias-custom" };
-      mockRequest.mockResolvedValue({ id: "pl-123", amount: 20000, alias: "meu-alias-custom" });
+      mockRequest.mockResolvedValue({ id: 247, amount: 20000, alias: "meu-alias-custom" });
 
-      await sdk.paymentLinks.update("pl-123", updateData);
+      await sdk.paymentLinks.update(247, updateData);
 
       const [, callOptions] = mockRequest.mock.calls[0];
       expect(JSON.parse(callOptions.body)).toEqual(updateData);
@@ -413,26 +413,26 @@ describe("BeehiveHub SDK", () => {
     it("should call update payment link endpoint", async () => {
       const sdk = BeehiveHub(apiKey);
       const updateData = { amount: 20000 };
-      mockRequest.mockResolvedValue({ id: "pl-123", amount: 20000 });
+      mockRequest.mockResolvedValue({ id: 247, amount: 20000 });
 
-      const result = await sdk.paymentLinks.update("pl-123", updateData);
+      const result = await sdk.paymentLinks.update(247, updateData);
 
       const [, callOptions] = mockRequest.mock.calls[0];
       const body = JSON.parse(callOptions.body);
       expect(body).toMatchObject({ amount: 20000 });
       expect(body.alias).toBeDefined();
       expect(body.alias).toMatch(/^[a-zA-Z0-9]{10}$/);
-      expect(mockRequest).toHaveBeenCalledWith("/payment-links/pl-123", expect.objectContaining({ method: "PUT" }));
-      expect(result).toEqual({ id: "pl-123", amount: 20000 });
+      expect(mockRequest).toHaveBeenCalledWith("/payment-links/247", expect.objectContaining({ method: "PUT" }));
+      expect(result).toEqual({ id: 247, amount: 20000 });
     });
 
     it("should call delete payment link endpoint", async () => {
       const sdk = BeehiveHub(apiKey);
       mockRequest.mockResolvedValue(undefined);
 
-      await sdk.paymentLinks.delete("pl-123");
+      await sdk.paymentLinks.delete(247);
 
-      expect(mockRequest).toHaveBeenCalledWith("/payment-links/pl-123", {
+      expect(mockRequest).toHaveBeenCalledWith("/payment-links/247", {
         method: "DELETE",
       });
     });

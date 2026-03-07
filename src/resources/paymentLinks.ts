@@ -107,10 +107,10 @@ export function createPaymentLinksResource(
      *
      * @example
      * ```ts
-     * const paymentLink = await beehive.paymentLinks.get("ck_abc123");
+     * const paymentLink = await beehive.paymentLinks.get(247);
      * ```
      */
-    async get(id: string): Promise<GetPaymentLinkResponse> {
+    async get(id: number): Promise<GetPaymentLinkResponse> {
       const result = await request<GetPaymentLinkResponse>(
         `/payment-links/${id}`,
         { method: "GET" },
@@ -127,7 +127,7 @@ export function createPaymentLinksResource(
      *
      * @example
      * ```ts
-     * const paymentLink = await beehive.paymentLinks.update("247", {
+     * const paymentLink = await beehive.paymentLinks.update(247, {
      *   title: "novo link alterado",
      *   alias: "alias_alterado",
      *   amount: 1000,
@@ -144,7 +144,7 @@ export function createPaymentLinksResource(
      * ```
      */
     async update(
-      id: string,
+      id: number,
       data: UpdatePaymentLinkData,
     ): Promise<UpdatePaymentLinkResponse> {
       const payload = { ...data };
@@ -168,10 +168,10 @@ export function createPaymentLinksResource(
      *
      * @example
      * ```ts
-     * await beehive.paymentLinks.delete("ck_abc123");
+     * await beehive.paymentLinks.delete(247);
      * ```
      */
-    delete(id: string): Promise<void> {
+    delete(id: number): Promise<void> {
       return request(`/payment-links/${id}`, {
         method: "DELETE",
       });

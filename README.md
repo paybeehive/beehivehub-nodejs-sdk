@@ -120,23 +120,23 @@ const transactions = await beehive.transactions.list({
 #### Get a transaction
 
 ```typescript
-const transaction = await beehive.transactions.get("123456");
+const transaction = await beehive.transactions.get(123456);
 ```
 
 #### Refund a transaction
 
 ```typescript
 // Full refund
-const refund = await beehive.transactions.refund("123456");
+const refund = await beehive.transactions.refund(123456);
 
 // Partial refund
-const partialRefund = await beehive.transactions.refund("123456", 5000);
+const partialRefund = await beehive.transactions.refund(123456, 5000);
 ```
 
 #### Update delivery status
 
 ```typescript
-const updated = await beehive.transactions.updateDelivery("123456", {
+const updated = await beehive.transactions.updateDelivery(123456, {
   status: "in_transit",
   trackingCode: "BR123456789"
 });
@@ -178,7 +178,7 @@ const customers = await beehive.customers.list({
 #### Get a customer
 
 ```typescript
-const customer = await beehive.customers.get("123456");
+const customer = await beehive.customers.get(123456);
 ```
 
 ### Transfers
@@ -211,7 +211,7 @@ const transferWithAccount = await beehive.transfers.create({
 #### Get a transfer
 
 ```typescript
-const transfer = await beehive.transfers.get("123456");
+const transfer = await beehive.transfers.get(123456);
 ```
 
 ### Balance
@@ -257,13 +257,13 @@ const recipients = await beehive.recipients.list();
 #### Get a recipient
 
 ```typescript
-const recipient = await beehive.recipients.get("916");
+const recipient = await beehive.recipients.get(916);
 ```
 
 #### Update a recipient
 
 ```typescript
-const updated = await beehive.recipients.update("916", {
+const updated = await beehive.recipients.update(916, {
   legalName: "Beehive Sandbox"
 });
 ```
@@ -273,7 +273,7 @@ const updated = await beehive.recipients.update("916", {
 #### Add a bank account
 
 ```typescript
-const bankAccount = await beehive.bankAccounts.create("916", {
+const bankAccount = await beehive.bankAccounts.create(916, {
   bankCode: "341",
   agencyNumber: "9876",
   accountNumber: "54321",
@@ -288,7 +288,7 @@ const bankAccount = await beehive.bankAccounts.create("916", {
 #### List bank accounts
 
 ```typescript
-const accounts = await beehive.bankAccounts.list("916");
+const accounts = await beehive.bankAccounts.list(916);
 ```
 
 ### Company
@@ -355,7 +355,7 @@ const paymentLinks = await beehive.paymentLinks.list();
 #### Get a payment link
 
 ```typescript
-const paymentLink = await beehive.paymentLinks.get("ck_abc123");
+const paymentLink = await beehive.paymentLinks.get(247);
 ```
 
 #### Update a payment link
@@ -363,7 +363,7 @@ const paymentLink = await beehive.paymentLinks.get("ck_abc123");
 Aceita atualizações parciais (apenas os campos que deseja alterar).
 
 ```typescript
-const updated = await beehive.paymentLinks.update("247", {
+const updated = await beehive.paymentLinks.update(247, {
   title: "novo link alterado",
   alias: "alias_alterado",
   amount: 1000,
@@ -382,7 +382,7 @@ const updated = await beehive.paymentLinks.update("247", {
 #### Delete a payment link
 
 ```typescript
-await beehive.paymentLinks.delete("ck_abc123");
+await beehive.paymentLinks.delete(247);
 ```
 
 ## Error Handling
