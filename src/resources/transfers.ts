@@ -57,10 +57,10 @@ export function createTransfersResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const transfer = await beehive.transfers.get("123456");
+     * const transfer = await beehive.transfers.get(123456);
      * ```
      */
-    get(id: string): Promise<GetTransferResponse> {
+    get(id: number): Promise<GetTransferResponse> {
       return request(`/transfers/${id}`, {
         method: "GET",
       });

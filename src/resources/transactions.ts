@@ -82,10 +82,10 @@ export function createTransactionsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const transaction = await beehive.transactions.get("123456");
+     * const transaction = await beehive.transactions.get(123456);
      * ```
      */
-    get(id: string): Promise<GetTransactionResponse> {
+    get(id: number): Promise<GetTransactionResponse> {
       return request(`/transactions/${id}`, {
         method: "GET",
       });
@@ -102,13 +102,13 @@ export function createTransactionsResource(request: RequestFunction) {
      * @example
      * ```ts
      * // Estorno total
-     * const refund = await beehive.transactions.refund("123456");
+     * const refund = await beehive.transactions.refund(123456);
      * 
      * // Estorno parcial
-     * const partialRefund = await beehive.transactions.refund("123456", 5000);
+     * const partialRefund = await beehive.transactions.refund(123456, 5000);
      * ```
      */
-    refund(id: string, amount?: number): Promise<RefundTransactionResponse> {
+    refund(id: number, amount?: number): Promise<RefundTransactionResponse> {
       return request(`/transactions/${id}/refund`, {
         method: "POST",
         body: JSON.stringify(amount ? { amount } : {}),
@@ -125,14 +125,14 @@ export function createTransactionsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const transaction = await beehive.transactions.updateDelivery("123456", {
+     * const transaction = await beehive.transactions.updateDelivery(123456, {
      *   status: "in_transit",
      *   trackingCode: "BR123456789"
      * });
      * ```
      */
     updateDelivery(
-      id: string,
+      id: number,
       data: UpdateDeliveryStatusData,
     ): Promise<UpdateDeliveryStatusResponse> {
       return request(`/transactions/${id}/delivery`, {

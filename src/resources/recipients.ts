@@ -76,10 +76,10 @@ export function createRecipientsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const recipient = await beehive.recipients.get("re_abc123");
+     * const recipient = await beehive.recipients.get(916);
      * ```
      */
-    get(id: string): Promise<GetRecipientResponse> {
+    get(id: number): Promise<GetRecipientResponse> {
       return request(`/recipients/${id}`, {
         method: "GET",
       });
@@ -95,13 +95,13 @@ export function createRecipientsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const recipient = await beehive.recipients.update("916", {
+     * const recipient = await beehive.recipients.update(916, {
      *   legalName: "Beehive Sandbox"
      * });
      * ```
      */
     update(
-      id: string,
+      id: number,
       data: UpdateRecipientData,
     ): Promise<UpdateRecipientResponse> {
       return request(`/recipients/${id}`, {

@@ -20,7 +20,7 @@ export function createBankAccountsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const bankAccount = await beehive.bankAccounts.create("916", {
+     * const bankAccount = await beehive.bankAccounts.create(916, {
      *   bankCode: "341",
      *   agencyNumber: "9876",
      *   accountNumber: "54321",
@@ -32,7 +32,7 @@ export function createBankAccountsResource(request: RequestFunction) {
      * });
      * ```
      */
-    create(recipientId: string, data: CreateBankAccountData): Promise<CreateBankAccountResponse> {
+    create(recipientId: number, data: CreateBankAccountData): Promise<CreateBankAccountResponse> {
       return request(`/recipients/${recipientId}/bank-accounts`, {
         method: "POST",
         body: JSON.stringify(data),
@@ -48,10 +48,10 @@ export function createBankAccountsResource(request: RequestFunction) {
      * 
      * @example
      * ```ts
-     * const bankAccounts = await beehive.bankAccounts.list("re_abc123");
+     * const bankAccounts = await beehive.bankAccounts.list(916);
      * ```
      */
-    list(recipientId: string): Promise<ListBankAccountsResponse> {
+    list(recipientId: number): Promise<ListBankAccountsResponse> {
       return request(`/recipients/${recipientId}/bank-accounts`, {
         method: "GET",
       });
