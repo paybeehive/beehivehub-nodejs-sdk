@@ -15,7 +15,7 @@ export function createTransfersResource(request: RequestFunction) {
      * 
      * @param data - Dados da transferência
      * @returns Dados da transferência criada ou erro
-     * @see https://paybeehive.readme.io/reference/criar-transferencia
+     * @see https://docs.beehivehub.io/api-reference/transfer%C3%AAncias/criar-transfer%C3%AAncia
      * 
      * @example
      * ```ts
@@ -53,7 +53,7 @@ export function createTransfersResource(request: RequestFunction) {
      * 
      * @param id - ID da transferência
      * @returns Dados da transferência ou erro
-     * @see https://paybeehive.readme.io/reference/buscar-transferencia
+     * @see https://docs.beehivehub.io/api-reference/transfer%C3%AAncias/buscar-transfer%C3%AAncia
      * 
      * @example
      * ```ts

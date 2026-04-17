@@ -8,7 +8,7 @@ export const PAYMENT_LINK_URL_PRODUCTION = "https://link.conta.paybeehive.com.br
 /** URL base para links de pagamento (sandbox). Use: `${PAYMENT_LINK_URL_SANDBOX}/${alias}` */
 export const PAYMENT_LINK_URL_SANDBOX = "https://link.sandbox.hopysplit.com.br";
 
-export const BEEHIVE_DOCS = "https://paybeehive.readme.io/reference";
+export const BEEHIVE_DOCS = "https://docs.beehivehub.io";
 
 /**
  * Creates default headers for Beehive Hub API requests

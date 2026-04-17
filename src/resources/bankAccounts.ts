@@ -16,7 +16,7 @@ export function createBankAccountsResource(request: RequestFunction) {
      * @param recipientId - ID do recebedor
      * @param data - Dados da conta bancária
      * @returns Dados da conta criada ou erro
-     * @see https://paybeehive.readme.io/reference/adicionar-conta-bancaria
+     * @see https://docs.beehivehub.io/api-reference/contas-banc%C3%A1rias/adicionar-conta-banc%C3%A1ria
      * 
      * @example
      * ```ts
@@ -44,7 +44,7 @@ export function createBankAccountsResource(request: RequestFunction) {
      * 
      * @param recipientId - ID do recebedor
      * @returns Lista de contas bancárias ou erro
-     * @see https://paybeehive.readme.io/reference/buscar-conta-bancaria
+     * @see https://docs.beehivehub.io/api-reference/contas-banc%C3%A1rias/buscar-contas-banc%C3%A1rias
      * 
      * @example
      * ```ts

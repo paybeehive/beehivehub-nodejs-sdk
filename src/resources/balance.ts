@@ -10,7 +10,7 @@ export function createBalanceResource(request: RequestFunction) {
      * Obtém o saldo disponível da conta.
      * 
      * @returns Dados do saldo ou erro
-     * @see https://paybeehive.readme.io/reference/obter-saldo
+     * @see https://docs.beehivehub.io/api-reference/saldo/obter-saldo-dispon%C3%ADvel
      * 
      * @example
      * ```ts

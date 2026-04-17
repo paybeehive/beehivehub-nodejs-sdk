@@ -469,10 +469,10 @@ const beehive = BeehiveHub(process.env.BEEHIVE_SECRET_KEY!);
 
 ## Additional Documentation
 
-- [Official API Documentation](https://paybeehive.readme.io/reference)
-- [Integration Guide](https://paybeehive.readme.io/docs)
-- [Card Tokenization](https://paybeehive.readme.io/reference#tokenizando-cartao)
-- [Postback Format](https://paybeehive.readme.io/reference#formato-dos-postbacks)
+- [Official API Documentation](https://docs.beehivehub.io)
+- [Integration Guide](https://docs.beehivehub.io/api-reference)
+- [Card Tokenization](https://docs.beehivehub.io/quickstart)
+- [Postback Format](https://docs.beehivehub.io/webhook)
 
 ## Testing
 
@@ -489,7 +489,7 @@ npm run test:coverage
 For suggestions, bug reports, or questions:
 
 - **Email:** contato@paybeehive.com.br
-- **Documentation:** https://paybeehive.readme.io
+- **Documentation:** https://docs.beehivehub.io
 
 ## License
 

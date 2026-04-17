@@ -14,7 +14,7 @@ export function createCompanyResource(request: RequestFunction) {
      * Obtém os dados da empresa.
      * 
      * @returns Dados da empresa ou erro
-     * @see https://paybeehive.readme.io/reference/dados-da-empresa
+     * @see https://docs.beehivehub.io/api-reference/empresa/dados-da-empresa
      * 
      * @example
      * ```ts
@@ -32,7 +32,7 @@ export function createCompanyResource(request: RequestFunction) {
      * 
      * @param data - Dados para atualização
      * @returns Dados da empresa atualizada ou erro
-     * @see https://paybeehive.readme.io/reference/atualizar-dados-da-empresa
+     * @see https://docs.beehivehub.io/api-reference/empresa/atualizar-dados-da-empresa
      * 
      * @example
      * ```ts

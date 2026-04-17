@@ -17,7 +17,7 @@ describe("Constants", () => {
   });
 
   it("should have correct BEEHIVE_DOCS", () => {
-    expect(BEEHIVE_DOCS).toBe("https://paybeehive.readme.io/reference");
+    expect(BEEHIVE_DOCS).toBe("https://docs.beehivehub.io");
   });
 
   it("should have correct PAYMENT_LINK_URL_PRODUCTION", () => {
