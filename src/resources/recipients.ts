@@ -18,7 +18,7 @@ export function createRecipientsResource(request: RequestFunction) {
      * 
      * @param data - Dados do recebedor
      * @returns Dados do recebedor criado ou erro
-     * @see https://paybeehive.readme.io/reference/criar-recebedor
+     * @see https://docs.beehivehub.io/api-reference/recebedores/criar-recebedor
      * 
      * @example
      * ```ts
@@ -54,7 +54,7 @@ export function createRecipientsResource(request: RequestFunction) {
      * Lista todos os recebedores.
      * 
      * @returns Lista de recebedores ou erro
-     * @see https://paybeehive.readme.io/reference/listar-recebedores
+     * @see https://docs.beehivehub.io/api-reference/recebedores/listar-recebedores
      * 
      * @example
      * ```ts
@@ -72,7 +72,7 @@ export function createRecipientsResource(request: RequestFunction) {
      * 
      * @param id - ID do recebedor
      * @returns Dados do recebedor ou erro
-     * @see https://paybeehive.readme.io/reference/buscar-recebedor
+     * @see https://docs.beehivehub.io/api-reference/recebedores/buscar-recebedor
      * 
      * @example
      * ```ts
@@ -91,7 +91,7 @@ export function createRecipientsResource(request: RequestFunction) {
      * @param id - ID do recebedor
      * @param data - Dados para atualização
      * @returns Dados do recebedor atualizado ou erro
-     * @see https://paybeehive.readme.io/reference/atualizar-recebedor
+     * @see https://docs.beehivehub.io/api-reference/recebedores/atualizar-recebedor
      * 
      * @example
      * ```ts

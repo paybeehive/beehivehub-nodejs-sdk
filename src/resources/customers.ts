@@ -17,7 +17,7 @@ export function createCustomersResource(request: RequestFunction) {
      * 
      * @param data - Dados do cliente
      * @returns Dados do cliente criado ou erro
-     * @see https://paybeehive.readme.io/reference/criar-cliente
+     * @see https://docs.beehivehub.io/api-reference/clientes/criar-cliente
      * 
      * @example
      * ```ts
@@ -76,7 +76,7 @@ export function createCustomersResource(request: RequestFunction) {
      * 
      * @param id - ID do cliente
      * @returns Dados do cliente ou erro
-     * @see https://paybeehive.readme.io/reference/buscar-cliente
+     * @see https://docs.beehivehub.io/api-reference/clientes/buscar-cliente
      * 
      * @example
      * ```ts

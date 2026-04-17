@@ -20,7 +20,7 @@ export function createTransactionsResource(request: RequestFunction) {
      * 
      * @param data - Dados da transação
      * @returns Dados da transação criada ou erro
-     * @see https://paybeehive.readme.io/reference/criar-transacao
+     * @see https://docs.beehivehub.io/api-reference/transa%C3%A7%C3%B5es/criar-transa%C3%A7%C3%A3o
      * 
      * @example
      * ```ts
@@ -53,7 +53,7 @@ export function createTransactionsResource(request: RequestFunction) {
      * 
      * @param params - Parâmetros de filtro e paginação
      * @returns Lista de transações ou erro
-     * @see https://paybeehive.readme.io/reference/listar-transacoes
+     * @see https://docs.beehivehub.io/api-reference/transa%C3%A7%C3%B5es/listar-transa%C3%A7%C3%B5es
      * 
      * @example
      * ```ts
@@ -78,7 +78,7 @@ export function createTransactionsResource(request: RequestFunction) {
      * 
      * @param id - ID da transação
      * @returns Dados da transação ou erro
-     * @see https://paybeehive.readme.io/reference/buscar-transacao
+     * @see https://docs.beehivehub.io/api-reference/transa%C3%A7%C3%B5es/buscar-transa%C3%A7%C3%A3o
      * 
      * @example
      * ```ts
@@ -97,7 +97,7 @@ export function createTransactionsResource(request: RequestFunction) {
      * @param id - ID da transação
      * @param amount - Valor a ser estornado (opcional, estorna valor total se não informado)
      * @returns Dados do estorno ou erro
-     * @see https://paybeehive.readme.io/reference/estornar-transacao
+     * @see https://docs.beehivehub.io/api-reference/reembolsos/estornar-transa%C3%A7%C3%A3o
      * 
      * @example
      * ```ts
@@ -121,7 +121,6 @@ export function createTransactionsResource(request: RequestFunction) {
      * @param id - ID da transação
      * @param data - Dados de entrega
      * @returns Dados da transação atualizada ou erro
-     * @see https://paybeehive.readme.io/reference/alterar-status-de-entrega
      * 
      * @example
      * ```ts
